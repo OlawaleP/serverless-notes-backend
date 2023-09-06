@@ -17,3 +17,7 @@ phases:
   post_build:
     commands:
       - echo Deployment completed on `date`
+
+cache:
+  paths:
+    - node_modules
