@@ -38,13 +38,13 @@ exports.handler = async (event) => {
             body: JSON.stringify(data)
         }
     } catch (error) {
-        console.log("Error", err);
+        console.log("Error", error);
         return {
-            statusCode: err.statusCode ? err.statusCode : 500,
+            statusCode: error.statusCode ? error.statusCode : 500,
             headers: util.getResponseHeaders(),
             body: JSON.stringify({
-                error: err.name ? err.name : "Expectation",
-                message: err.message ? err.message : "Unknown error"
+                error: error.name ? error.name : "Expectation",
+                message: error.message ? error.message : "Unknown error"
             })
         };
     }
